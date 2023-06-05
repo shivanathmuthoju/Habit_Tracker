@@ -4,9 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Habit Tracker</title>
+    <link rel="stylesheet" href="css/rootstyles.css">
+    <link rel="stylesheet" href="css/signinpages.css">
 </head>
 <body>
-    <h1>SignUp </h1>
+    <div class="container">
+        <div class="topbar">
+            <h1>Habit Tracker.</h1>
+            <div class="loginFormContainer shadow">
+                <h4>Sign Up.</h4>
+                <form class="loginForms" action="#" method="post">
+                    <input type="email" name="signupEmail" id="signupEmail" class="credInputs" placeholder="Email" required>
+                    <input type="password" name="signupPassword" id="signupPassword" class="credInputs" placeholder="Password" required>
+                    <input type="password" name="signupPasswordConfirm" id="signupPasswordConfirm" class="credInputs" placeholder="Confirm Password" required>
+                    <button type="submit" class="primaryBtns">Sign In</button>
+                </form> 
+                <p>Have an account? <a href="/signin">Sign In</a></p>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

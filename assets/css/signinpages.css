@@ -1,0 +1,42 @@
+.topbar {
+    height: 55vh;
+    background-color: var(--bg-secondary);
+    width: 100vw;
+    position: relative;
+}
+
+.topbar h1 {
+   position: absolute;
+   left: 50%;
+   top : 150px;
+   transform: translate(-50%);
+   width: max-content;
+   font-weight: 500;
+}
+
+.loginFormContainer {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    padding: 20px;
+    background-color: var(--bg-secondary);
+    transform: translate(-50%, 50%);
+    width: 30vw;
+    min-width: 300px;
+}
+.loginFormContainer p {
+    text-align: center;
+    margin-top: 5px;
+}
+.loginFormContainer h4 {
+    font-size: 1.35rem;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+.credInputs {
+    width: 100%;
+    padding: 10px 20px;
+    border: 1px solid var(--bg-primary);
+    margin: 5px 0px;
+}

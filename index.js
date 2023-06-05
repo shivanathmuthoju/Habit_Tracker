@@ -12,10 +12,4 @@ app.listen(port, () => {
     console.log(`Server is running on port : ${port}`)
 })
 
-app.use('/signin', (req, res) => {
-    res.render('signin.ejs')
-})
-
-app.use('/signup', (req, res) => {
-    res.render('signup.ejs')
-})
+app.use('/', require('./routes/index'))

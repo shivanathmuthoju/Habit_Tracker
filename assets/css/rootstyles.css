@@ -62,9 +62,11 @@ p, h1, h2, h3, h4, h5, h6 {
     transition: 0.25s ease-in-out;
 }
 
-.primaryBtns:hover {
-    transform: scale(1.025);
+.primaryBtns:hover , .primaryBtns:focus{
+    
+    transform: scale(1.035);
 }
+
 
 .loginForms {
     display: flex;

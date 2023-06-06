@@ -1,9 +1,8 @@
 .topbar {
+    position: relative;
     height: 55vh;
     background-color: var(--bg-secondary);
     width: 100vw;
-    position: relative;
-    
 }
 
 .topbar h1 {

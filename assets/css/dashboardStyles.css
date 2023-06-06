@@ -1,0 +1,6 @@
+main {
+    background-color: var(--bg-secondary);
+    height: 80%;
+    width: 80%;
+    margin: auto;
+}

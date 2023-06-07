@@ -5,6 +5,16 @@ const habitSchema = new mongoose.Schema({
         type : String,
         required : true
     },
+    user : {
+        type : mongoose.Schema.Types.ObjectId,
+        ref : "User",
+        required : true
+    },
+    category : {
+        type : String,
+        required : true,
+        enum : ["Physical", "Mental", "Career"]
+    },
     entries : [{
         // date : {
         //     type : mongoose.Schema.Types.Date

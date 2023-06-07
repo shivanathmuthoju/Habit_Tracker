@@ -103,3 +103,14 @@ p, h1, h2, h3, h4, h5, h6 {
 .promptIcon {
     font-size: 3.5em;
 }
+
+.credInputs {
+    width: 100%;
+    padding: 10px 20px;
+    border: 1px solid var(--bg-primary);
+    margin: 5px 0px;
+}
+
+.lightText {
+    color: var(--bg-secondary);
+}

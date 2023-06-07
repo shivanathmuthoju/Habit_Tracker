@@ -18,5 +18,7 @@ router.get('/signout',
 );
 
 
+router.post('/addHabit', habitController.addHabit);
+
 
 module.exports = router;

@@ -1,6 +1,252 @@
-main {
+header {
+    color: var(--bg-secondary);
+    padding: 20px;
+    height: 14%;
+    font-size: 1.125em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 400;
+    position: relative;
+}
+
+.addHabitMenu {
     background-color: var(--bg-secondary);
-    height: 80%;
+    position: absolute;
+    top : 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    color: var(--bg-primary);
+    transition: all 0.5s ease-out;
+    width: 0px;
+    padding: 0;
+    overflow: hidden;
+}
+
+
+.addHabitBtnContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: max-content;
+}
+
+.habitForm {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.habitLabels {
+    max-height: 50px;
+    height: 50px;
+    aspect-ratio: 1;
+    margin-bottom: 2px;
+    /* margin: 0px 10px; */
+}
+
+
+
+input[type="radio"] {
+    display: none;
+}
+
+input[type="radio"]:checked + label {
+    outline: 2px solid var(--bg-primary);
+    outline-offset: 4px;
+}
+
+.inputsContainer {
     width: 80%;
-    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.habitCatBtnsContainer {
+    display: flex;
+    width: max-content;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: 40px;
+}
+
+.habitCatergoriesContainer  {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: max-content;
+    width: max-content;
+    margin: 0px 10px;
+}
+
+.habitCatergoriesContainer > span {
+    margin-top: 3px;
+    font-size: 0.75em;
+}
+
+.inputsContainer > .credInputs {
+    max-width: 500px;
+}
+
+
+#title {
+    font-weight: 400;
+}
+
+.headerBtnsContainer {
+    display: flex;
+    align-items: center;
+}
+main {
+    height: 86%;
+    width: 100%;
+    /* margin: auto; */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow-y: scroll;
+}
+
+main::-webkit-scrollbar {display: none;}
+
+.secondaryBtn {
+    border: 1px solid var(--bg-secondary);
+    outline: none;
+    padding: 8px 24px;
+    color: var(--bg-secondary);
+    background-color: transparent;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    transition: 0.25s ease-in-out;
+    margin: 0px 5px;
+}
+
+a:visited , a{
+    color: none;
+    text-decoration: none;
+}
+
+.secondaryBtn:hover {
+    background-color: var(--bg-secondary);
+    color: var(--bg-primary);
+    transform: scale(1.035);
+}
+
+/* <---------  cards ---------> */
+
+.habitCards {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--bg-secondary);
+    margin-bottom: 20px;
+    min-width: 577px;
+}
+
+.habitCardsForeground {
+    background-color: var(--bg-primary);
+    height: max-content;
+    padding: 40px 20px;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.habitCardsBtnContainer {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    justify-content: flex-end;
+    margin-left: 145px;
+}
+
+.primaryBtn-sm {
+    background-color: var(--bg-primary);
+    padding: 10px 20px;
+    color : var(--bg-secondary);
+    font-weight: 500;
+    display: grid;
+    place-items: center;
+    outline: none;
+    border: none;
+    border: 1px solid var(--bg-primary);
+    margin: 10px;
+    cursor: pointer;
+}
+.secondaryBtn-sm {
+    background-color: transparent;
+    padding: 10px 20px;
+    color : var(--bg-primary);
+    font-weight: 500;
+    display: grid;
+    place-items: center;
+    outline: none;
+    border: 1px solid var(--bg-primary);
+    margin: 10px;
+    cursor: pointer;
+    flex-grow: 1;
+}
+
+
+.cardImg {
+    height: 175px;
+    width: 125px;
+    background-image: url('../images/habits/physical/vecteezy_cute-astronaut-riding-a-skateboard-vector-illustration_24341953.jpg');
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+}
+
+.cardInfo {
+    margin-left: 145px;
+    color: var(--bg-secondary);
+}
+
+.dayBtn {
+    outline: none;
+    border: 1px solid var(--bg-secondary);
+    padding: 10px 15px;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    color: var(--bg-secondary);
+    margin: 4px;
+    font-weight: 400;
+    cursor : pointer;
+}
+
+.dayBtn:hover {
+    background-color: var(--bg-secondary);
+    color: var(--bg-primary);
+}
+
+.activeDay {
+    
+    outline: 2px solid var(--bg-secondary);
+    outline-offset: 4px;
+    font-weight: 600;
+    background-color: var(--bg-secondary);
+    color: var(--bg-primary);
+}
+
+.habitCardDaysContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.promptIcon-lg {
+    font-size: 10rem;
+    color: var(--bg-secondary);
 }

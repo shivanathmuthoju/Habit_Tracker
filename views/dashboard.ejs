@@ -25,17 +25,17 @@
                             <p>Select a Category</p>
                             <div class="habitCatergoriesContainer">
                                 <input type="radio" name="habitCategory" value="Physical" id="Physical" required checked>
-                                <label class="habitLabels" for="Physical"><img src="images/habits/physical/vecteezy_cute-astronaut-riding-a-cycle-vector-illustration-in_24341958.jpg" alt=""></label>
+                                <label class="habitLabels" for="Physical"><img src="images/habits/physical/1.jpg" alt=""></label>
                                 <span>Physical</span>
                             </div>
                             <div class="habitCatergoriesContainer">
                                 <input type="radio" name="habitCategory" value ="Mental" id="Mental">
-                                <label class="habitLabels" for="Mental"><img src="images/habits/mental/vecteezy_cute-astronaut-blowing-soap-bubbles-vector-illustration-in_24341959.jpg" alt=""></label>
+                                <label class="habitLabels" for="Mental"><img src="images/habits/mental/2.jpg" alt=""></label>
                                 <span>Mind</span>
                             </div>
                             <div class="habitCatergoriesContainer">
                                 <input type="radio" name="habitCategory" value ="Career" id="Career">
-                                <label class="habitLabels" for="Career"><img src="images/habits/career/vecteezy_cute-astronaut-reading-a-book-vector-illustration-in_24341954.jpg" alt=""></label>
+                                <label class="habitLabels" for="Career"><img src="images/habits/career/3.jpg" alt=""></label>
                                 <span>Career</span>
                             </div>
                         </div>
@@ -54,26 +54,40 @@
                 <% for(let i in user.habits) { %>
 
                     <% let habit = user.habits[i] %>
-                    <% console.log(habit) %>
-                    <div class="habitCards shadow">
+                    <% let entries = habit.entries %>
+                    <% let randomNumber = Math.floor(Math.random() * (3 - 1 + 1)) + 1 %>
+                    <% let category = habit.category.toLowerCase() %>
+                    <div class="habitCards shadow" data-habit="<%= habit._id %>">
                         <div class="habitCardsForeground">
-                            <div class="cardImg"></div>
+                           <button class="habitDeleteBtn" data-habit="<%= habit._id %>"><i class='bx bxs-trash'></i></button>
+                            <div class="cardImg" style="background-image: url('images/habits/<%= category %>/<%= randomNumber %>.jpg');"></div>
                             <div class="cardInfo">
                                 <h2 class="habitTitle"><%= habit.name %></h2>
                                 <div class="habitCardDaysContainer">
-                                    <button class="dayBtn activeDay">S</button>
-                                    <button class="dayBtn">M</button>
-                                    <button class="dayBtn">T</button>
-                                    <button class="dayBtn">W</button>
-                                    <button class="dayBtn">T</button>
-                                    <button class="dayBtn">F</button>
-                                    <button class="dayBtn">S</button>
+                                 
+                                 <% for(let date of dates) { %> 
+                                    <% let dateFromString = new Date(date) %>
+                                    <% let classes = dateFromString.getDate() === new Date().getDate() ? 'dayBtn activeDay' : 'dayBtn' %>
+                                    <% let entry = entries.find((entry) => entry.date == date) %>
+                                    <% if(entry != undefined) { %>
+
+                                       <% if(entry.status == "Done") { %> 
+                                          <% classes += " Done" %> 
+                                       <% } else { %> 
+                                          <% classes += " NotDone" %>
+                                       <% } %>
+
+                                    <% } %>
+                                    <button class='<%= classes %>' data-habit="<%= habit._id %>" data-date="<%= date %>"><%= dateFromString.getDate() %></button>
+                                    
+                                 <% } %>
                                 </div>
                             </div>
                         </div>
-                        <div class="habitCardsBtnContainer">
-                            <button class="primaryBtn-sm">Mark As Done</button>
-                            <button class="secondaryBtn-sm">Mark As Not Done</button>
+                        
+                        <div class="habitCardsBtnContainer" data-habit="<%= habit._id %>">
+                            <!-- <button class="primaryBtn-sm done" data-habit="<%= habit._id %>" data-date=<%= dates[(dates.length-1)] %> >Mark As Done</button>
+                            <button class="secondaryBtn-sm notDone" data-habit="<%= habit._id %>" data-date=<%= dates[(dates.length-1)] %> >Mark As Not Done</button> -->
                         </div>
         
                     </div>

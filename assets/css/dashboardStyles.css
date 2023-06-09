@@ -149,7 +149,7 @@ a:visited , a{
     background-color: var(--bg-secondary);
     border: 1px solid var(--bg-secondary);
     margin-bottom: 20px;
-    min-width: 577px;
+    min-width: 577.81px;
 }
 
 .habitCardsForeground {
@@ -199,10 +199,11 @@ a:visited , a{
 .cardImg {
     height: 175px;
     width: 125px;
-    background-image: url('../images/habits/physical/vecteezy_cute-astronaut-riding-a-skateboard-vector-illustration_24341953.jpg');
     background-position: center;
     background-size: cover;
     position: absolute;
+    
+    
 }
 
 .cardInfo {
@@ -223,11 +224,13 @@ a:visited , a{
     margin: 4px;
     font-weight: 400;
     cursor : pointer;
+    transition: all 0.25s ease-in-out;
 }
 
 .dayBtn:hover {
     background-color: var(--bg-secondary);
     color: var(--bg-primary);
+    transform: scale(1.035);
 }
 
 .activeDay {
@@ -249,4 +252,78 @@ a:visited , a{
 .promptIcon-lg {
     font-size: 10rem;
     color: var(--bg-secondary);
+}
+
+.Done {
+    background-color: var(--bg-done);
+    color: var(--bg-primary);
+}
+
+.NotDone {
+    background-color: var(--bg-notdone);
+    color: var(--bg-primary);
+}
+
+
+.secondaryBtn-sm, .primaryBtn-sm {
+    transition: all 0.25s ease-in-out;
+}
+.secondaryBtn-sm:hover, .primaryBtn-sm:hover {
+    transform: scale(1.035);
+}
+
+.secondaryBtn-sm[data-value="Marked"] {
+    position: relative;
+}
+.secondaryBtn-sm[data-value="Marked"]::before {
+
+    content: "Click to Update";
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: var(--bg-primary);
+    position: absolute;
+    color: var(--bg-secondary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 0;
+    overflow: hidden;
+    transition: all 0.25s ease-in-out;
+}
+
+.secondaryBtn-sm[data-value="Marked"]:hover::before {
+    width: 100%;
+}
+
+label{
+    cursor: pointer;
+    transition: scale 0.25s ease-in-out;
+}
+
+label:hover {
+    transform: scale(1.035);
+}
+
+.habitDeleteBtn {
+    padding: 8px;
+    outline: none;
+    border: 1px solid var(--bg-secondary);
+    background-color: transparent;
+    color: var(--bg-secondary);
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-weight: 200;
+    cursor: pointer;
+}
+
+.habitDeleteBtn > * {
+    pointer-events: none;
+}
+
+.habitDeleteBtn:hover {
+    background-color: var(--bg-secondary);
+    color: var(--bg-primary);
 }

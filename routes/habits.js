@@ -17,8 +17,18 @@ router.get('/signout',
     habitController.signOut
 );
 
-
+// adding habit
 router.post('/addHabit', habitController.addHabit);
+
+//get status id
+router.get('/status/:id', habitController.getDayStatus);
+
+//update details
+router.post('/updateStatus/:id', habitController.updateHabitStatus);
+
+//delete habit
+
+router.delete('/delete', habitController.deleteHabit);
 
 
 module.exports = router;

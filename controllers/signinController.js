@@ -1,4 +1,4 @@
-module.exports.signin = (req, res) => {
+module.exports.signin = (req, res) => { // sign in page route controller
 
     if(req.isAuthenticated()) {
         return res.redirect('/habits')
@@ -6,6 +6,6 @@ module.exports.signin = (req, res) => {
     return res.render('signin.ejs')
 }
 
-module.exports.loginUser = (req, res) => {
+module.exports.loginUser = (req, res) => { // sign in the user
     return res.redirect('/habits')
 }

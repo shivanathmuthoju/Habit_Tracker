@@ -16,14 +16,6 @@ const habitSchema = new mongoose.Schema({
         enum : ["Physical", "Mental", "Career"]
     },
     entries : [{
-        // date : {
-        //     type : mongoose.Schema.Types.Date
-        // },
-        // status : {
-        //     type : String,
-        //     default : 'None',
-        //     enum : ['Done', 'Not Done', 'None']
-        // }
         type : mongoose.Schema.Types.Mixed
     }]
 

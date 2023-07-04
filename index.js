@@ -1,4 +1,4 @@
-const express = require('express');
+const express = require('express'); // setting up express
 const cookieParser = require('cookie-parser');
 const app = express();
 const port = 8000;
@@ -43,4 +43,5 @@ app.use('/', require('./routes/index'));
 app.use('/habits', require('./routes/habits'));
 app.get('/:any', (req, res) => {
     res.render('errorPage.ejs')
-})
+});
+

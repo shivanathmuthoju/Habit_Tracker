@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require('mongoose'); // setting up mongoose
 
 mongoose.connect('mongodb://127.0.0.1/habit_tracker')
 

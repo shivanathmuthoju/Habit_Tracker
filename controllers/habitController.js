@@ -2,27 +2,24 @@ const User = require('../models/user');
 const Habit = require('../models/habits');
 const date = require('date-fns')
 
-module.exports.home = async (req, res) => {
+module.exports.home = async (req, res) => { // sends the user habits and the dates for the last seven days
     let user = await User.findById(req.user._id).populate('habits');
     let today = new Date;
-    // let previous = date.subDays(today, 7);
     let dates = []
      for(let i=6; i>=0; i--) {
         dates.push(date.format(new Date((date.subDays(today, i))), "MM-dd-yyyy"))
     }
 
-    console.log(dates)
-
     return res.render('dashboard.ejs', {user : user, dates : dates});
 
 }
-
+// sign out
 module.exports.signOut = (req, res) => {
     return res.redirect('/');
 }
-
+// adds habit
 module.exports.addHabit = async (req, res) => {
-    console.log(req.body);
+    
     let habit = await Habit.create({
         name : req.body.habitName,
         category : req.body.habitCategory,
@@ -35,7 +32,7 @@ module.exports.addHabit = async (req, res) => {
 
     return res.redirect('back');
 }
-
+// get status of the day
 module.exports.getDayStatus = async(req, res) => {
     
     let habit = await Habit.findById(req.params.id)
@@ -53,7 +50,6 @@ module.exports.updateHabitStatus = async (req, res) => {
     let date = req.query.date;
     let statusUpdate = req.query.status;
     let isHabitPresent = habit.entries.find((entry) => entry.date == date);
-    console.log("is Habit", isHabitPresent)
     if(isHabitPresent != undefined) {
         await habit.entries.remove(isHabitPresent);
         await habit.save();

@@ -48,7 +48,6 @@ header {
     height: 50px;
     aspect-ratio: 1;
     margin-bottom: 2px;
-    /* margin: 0px 10px; */
 }
 
 
@@ -108,7 +107,6 @@ input[type="radio"]:checked + label {
 main {
     height: 86%;
     width: 100%;
-    /* margin: auto; */
     padding: 20px;
     display: flex;
     flex-direction: column;

@@ -1,22 +1,20 @@
 
-# Employee Review App
+# Habit Tracker App
 
-An application where employees can give feedback to each other within the organization
-
+An application where people can track their daily habits
 
 
 
 ## Technologies Used
 
-Frontend : HTML 
-CSS
-JavaScript
+Frontend : HTML ,CSS, JavaScript
 
 Template : EJS
 
-Backend : ExpressJs
+Backend : Node JS, ExpressJs
 
 Database : MongoDB
+
 ## Run Locally
 
 Clone the project
@@ -40,7 +38,7 @@ Install dependencies
 Start the server
 
 ```bash
-  npm run start
+  npm start
 ```
 
 view in browser

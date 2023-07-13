@@ -56,4 +56,4 @@ localhost:8000/
 
 ### Credits
 
-Illustrations from [Freepik](https://www.freepik.com]
+Illustrations from [Freepik](https://www.freepik.com)

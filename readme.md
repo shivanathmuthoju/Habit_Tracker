@@ -47,3 +47,13 @@ view in browser
 localhost:8000/
 ```
 
+### How to Use
+
+1. Create your account
+2. Sign In
+3. Click on Add habit to add your habits
+4. Change the status of the habits by clicking on the dates and selecting the status
+
+### Credits
+
+Illustrations from [Freepik](https://www.freepik.com]
